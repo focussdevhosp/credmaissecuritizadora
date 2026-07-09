@@ -2404,7 +2404,47 @@ img {
 }
 
 .solution-theme-retail .solution-theme-copy {
-  border-radius: 36px 999px 36px 36px;
+  min-height: clamp(520px, 50vw, 640px);
+  border-radius: 42px;
+  background:
+    radial-gradient(circle at 90% 28%, color-mix(in srgb, var(--accent) 38%, transparent), transparent 34%),
+    radial-gradient(circle at 12% 14%, rgb(255 91 0 / 0.18), transparent 30%),
+    linear-gradient(155deg, #2a073c 0%, #16001f 48%, #080510 100%);
+  padding-right: clamp(1.5rem, 4.2vw, 4rem);
+}
+
+.solution-theme-retail .solution-theme-copy::before {
+  content: "";
+  position: absolute;
+  right: -18%;
+  top: -10%;
+  z-index: 1;
+  width: min(34vw, 420px);
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in srgb, var(--accent) 34%, transparent);
+  border-radius: 999px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 18%, transparent), transparent 66%);
+  pointer-events: none;
+}
+
+.solution-theme-retail .solution-theme-copy h2 {
+  max-width: 12.5ch;
+  font-size: clamp(2.75rem, 4.55vw, 5.05rem);
+  letter-spacing: -0.055em;
+  line-height: 0.94;
+  text-wrap: balance;
+}
+
+.solution-theme-retail .solution-theme-cases {
+  align-content: center;
+}
+
+.solution-theme-retail .solution-theme-case {
+  min-height: clamp(170px, 16vw, 220px);
+}
+
+.solution-theme-retail .solution-theme-case:nth-child(2) {
+  margin-left: clamp(0rem, 4vw, 3rem);
 }
 
 .solution-theme-control .solution-theme-copy {
