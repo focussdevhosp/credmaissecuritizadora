@@ -523,7 +523,7 @@ function useHomeMotion() {
       }
 
       const media = gsap.matchMedia();
-      media.add("(min-width: 768px)", () => {
+      media.add("(min-width: 1024px)", () => {
         const railSection = document.querySelector<HTMLElement>(".motion-rail-section");
         const railViewport = document.querySelector<HTMLElement>(".motion-rail-viewport");
         const railTrack = document.querySelector<HTMLElement>(".motion-rail-track");

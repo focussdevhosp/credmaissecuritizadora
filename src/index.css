@@ -4199,6 +4199,355 @@ li {
   }
 }
 
+/* Responsive hardening: keep cards readable and prevent hidden wide content on small/tablet screens. */
+.hero-animated-copy,
+.hero-cta-panel,
+.solution-detail-copy,
+.solution-bullet-card,
+.solution-theme-copy,
+.solution-theme-case,
+.solution-operating-card,
+.solution-banner-copy,
+.solution-banner-media,
+.solution-flow-step,
+.solution-visual-card,
+.home-pin-card,
+.home-proof-media,
+.engine-human-card,
+.contact-service-grid a {
+  min-width: 0;
+}
+
+.solution-bullet-card span,
+.solution-theme-case h3,
+.solution-operating-card h3,
+.solution-flow-step h3,
+.solution-visual-card h3,
+.home-pin-card h3,
+.motion-rail-card h3,
+.hero-animated-copy h1 {
+  max-width: 100%;
+  overflow-wrap: normal;
+  word-break: keep-all;
+  text-wrap: balance;
+}
+
+@media (max-width: 1023px) {
+  .motion-rail-section {
+    min-height: auto;
+    overflow: hidden;
+  }
+
+  .motion-rail-viewport {
+    overflow: visible;
+  }
+
+  .motion-rail-track {
+    display: grid;
+    width: 100%;
+    transform: none !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .motion-rail-card {
+    width: 100%;
+    flex-basis: auto;
+  }
+
+  .home-pin-card {
+    transform: none !important;
+  }
+
+  .solution-operating-card:nth-child(2),
+  .solution-operating-control .solution-operating-card:nth-child(3),
+  .solution-theme-case:nth-child(2),
+  .solution-theme-protection .solution-theme-case:nth-child(2),
+  .solution-theme-retail .solution-theme-case:nth-child(2) {
+    margin-left: 0;
+  }
+
+  .solution-detail-copy h2,
+  .solution-theme-copy h2,
+  .solution-operating-copy h2,
+  .solution-banner-copy h2,
+  .solution-flow-sticky h2,
+  .solution-faq-heading h2 {
+    max-width: 100%;
+  }
+
+  .solution-flow-step::after,
+  .solution-page-banner::after,
+  .solution-operating-panel::before {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .campaign-hero {
+    min-height: 100svh;
+  }
+
+  .hero-bg-image {
+    transform: none !important;
+  }
+
+  .hero-animated-copy {
+    top: clamp(5.9rem, 13svh, 7rem);
+    right: 1rem;
+    left: 1rem;
+    max-width: min(92vw, 24rem);
+  }
+
+  .hero-animated-copy > span {
+    max-width: 100%;
+    padding: 0.52rem 0.7rem;
+    font-size: 0.64rem;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-animated-copy h1 {
+    max-width: 11.5ch;
+    font-size: clamp(2.15rem, 10.6vw, 3.45rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .hero-animated-copy p {
+    max-width: min(88vw, 20rem);
+    font-size: 0.92rem;
+    line-height: 1.42;
+  }
+
+  .hero-cta {
+    bottom: max(0.75rem, env(safe-area-inset-bottom));
+    padding-inline: 0.75rem;
+  }
+
+  .hero-cta-panel {
+    width: 100%;
+    max-width: 100%;
+    gap: 0.72rem;
+    border-radius: 22px;
+    padding: 0.78rem;
+  }
+
+  .hero-cta-copy span {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+  }
+
+  .hero-cta-copy p {
+    max-width: none;
+    font-size: 0.82rem;
+    line-height: 1.32;
+  }
+
+  .hero-service-links {
+    display: none;
+  }
+
+  .hero-cta-action {
+    gap: 0.34rem;
+  }
+
+  .hero-cta-action small {
+    max-width: none;
+    font-size: 0.66rem;
+  }
+
+  .hero-cta-button,
+  .contact-submit,
+  .trust-cta,
+  .solution-banner-copy a,
+  .solution-operating-copy a,
+  .solution-faq-cta {
+    min-height: 48px;
+    padding: 0.9rem 1rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+  }
+
+  .brand-logo-shell {
+    height: 42px;
+    max-width: 54vw;
+    border-radius: 16px;
+    padding: 0.36rem 0.58rem;
+  }
+
+  .mobile-menu-panel {
+    max-height: calc(100svh - 5.5rem);
+  }
+
+  .home-proof-section,
+  .webgl-engine,
+  .home-pin-section,
+  .motion-rail-section,
+  .solutions-showcase,
+  .home-trust-section,
+  .home-faq-section,
+  .solution-detail-intro,
+  .solution-theme-mosaic,
+  .solution-operating-panel,
+  .solution-page-banner,
+  .solution-flow-section,
+  .solution-faq-section,
+  #contato {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .solution-detail-shell,
+  .solution-proof-strip,
+  .solution-theme-mosaic,
+  .solution-operating-panel,
+  .solution-page-banner,
+  .solution-flow-section,
+  .solution-visual-grid,
+  .solution-faq-section,
+  .home-proof-shell,
+  .webgl-engine,
+  .home-pin-section,
+  .home-faq-section {
+    gap: 1rem;
+  }
+
+  .solution-detail-copy,
+  .solution-theme-copy,
+  .solution-operating-card,
+  .solution-flow-step,
+  .solution-visual-card,
+  .solution-faq-item,
+  .home-pin-card,
+  .home-proof-card,
+  .testimonial-card {
+    border-radius: 24px;
+    padding: 1.15rem;
+  }
+
+  .solution-bullet-card {
+    min-height: 128px;
+    border-radius: 22px;
+    padding: 3.25rem 1rem 1rem;
+  }
+
+  .solution-bullet-card span,
+  .solution-bullet-card:first-child span,
+  .solution-flow-step h3,
+  .solution-operating-card h3,
+  .solution-theme-case h3,
+  .solution-visual-card h3 {
+    max-width: 100%;
+    font-size: clamp(1.35rem, 7vw, 2.15rem);
+    line-height: 1.06;
+    letter-spacing: -0.035em;
+  }
+
+  .solution-theme-copy {
+    min-height: 360px;
+  }
+
+  .solution-theme-protection .solution-theme-copy,
+  .solution-theme-retail .solution-theme-copy {
+    min-height: 390px;
+    border-radius: 28px;
+  }
+
+  .solution-flow-step {
+    min-height: auto;
+  }
+
+  .solution-flow-step p,
+  .solution-operating-card p,
+  .solution-theme-case p,
+  .solution-visual-card p {
+    max-width: none;
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .solution-banner-media,
+  .home-proof-media,
+  .engine-human-card {
+    min-height: 280px;
+    border-radius: 24px;
+  }
+
+  .engine-orbit {
+    display: none;
+  }
+
+  .solution-banner-media img,
+  .home-proof-media img,
+  .engine-human-card img {
+    transform: none !important;
+  }
+
+  .solution-floating-card {
+    max-width: calc(100% - 1.5rem);
+    border-radius: 18px;
+    padding: 0.78rem;
+  }
+
+  .motion-rail-track {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding-inline: 0;
+  }
+
+  .motion-rail-card {
+    border-radius: 24px;
+  }
+
+  .motion-rail-card img {
+    height: 230px;
+  }
+
+  .contact-service-grid a {
+    min-height: 78px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .campaign-hero {
+    min-height: 100svh;
+  }
+
+  .hero-bg-image {
+    transform: none !important;
+  }
+
+  .hero-animated-copy {
+    max-width: min(58vw, 32rem);
+  }
+
+  .hero-animated-copy h1 {
+    font-size: clamp(3rem, 8vw, 4.6rem);
+  }
+
+  .hero-cta-panel {
+    width: min(92vw, 760px);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "copy"
+      "services"
+      "action";
+  }
+
+  .hero-cta-button {
+    width: 100%;
+  }
+
+  .motion-rail-track {
+    gap: 1rem;
+  }
+
+  .solution-banner-media,
+  .home-proof-media,
+  .engine-human-card {
+    min-height: 360px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto !important;
