@@ -11,7 +11,6 @@ import {
   HandCoins,
   LineChart,
   Mail,
-  MapPin,
   Menu,
   Phone,
   Workflow,
@@ -59,6 +58,10 @@ const HERO_IMAGE = "/assets/credmais-campaign-hero.png";
 const ABOUT_IMAGE = "/assets/credmais-campaign-about.png";
 const CONTACT_IMAGE = "/assets/credmais-humanized-finance.png";
 const LOGO_IMAGE = "/assets/credmais-logo.avif";
+const CONTACT_EMAIL = "contato@credmaissecuritizadora.com.br";
+const CONTACT_WHATSAPP_DISPLAY = "(11) 94089-3852";
+const CONTACT_WHATSAPP_URL = "https://wa.me/5511940893852";
+const CONTACT_CNPJ = "67.859.471/0001-20";
 
 const solutionVisualSets: Partial<Record<string, SolutionVisualSet>> = {
   "antecipacao-de-recebiveis": {
@@ -1336,12 +1339,6 @@ function CampaignHero({ image, eyebrow, titleStart, titleBridge, words, descript
 }
 
 function ContactSection({ compact = false }: { compact?: boolean }) {
-  const [isSending, setIsSending] = useState(false);
-  const handleContactClick = () => {
-    setIsSending(true);
-    window.setTimeout(() => setIsSending(false), 1200);
-  };
-
   return (
     <section id="contato" className={`bg-[#16001f] px-5 text-white md:px-[10%] ${compact ? "py-24" : "py-32"}`}>
       <div className="mx-auto max-w-6xl text-center">
@@ -1368,16 +1365,16 @@ function ContactSection({ compact = false }: { compact?: boolean }) {
           <textarea className="contact-input min-h-36 resize-none" placeholder="Conte qual servico deseja: recebiveis, boleto garantido, consultoria, crediario ou gestao de contas." />
           <div className="grid gap-8 pt-4 md:grid-cols-[1fr_auto] md:items-center">
             <div className="grid gap-3 text-sm text-white/55 md:text-left">
-              <ContactLine icon={Phone} value="(00) 0000-0000" />
-              <ContactLine icon={Mail} value="contato@credmais.com.br" />
-              <ContactLine icon={MapPin} value="Brasil, operacoes para empresas" />
+              <ContactLine icon={Phone} value={`WhatsApp ${CONTACT_WHATSAPP_DISPLAY}`} href={CONTACT_WHATSAPP_URL} />
+              <ContactLine icon={Mail} value={CONTACT_EMAIL} href={`mailto:${CONTACT_EMAIL}`} />
+              <ContactLine icon={FileText} value={`CNPJ ${CONTACT_CNPJ}`} />
             </div>
             <div className="contact-submit-wrap">
-              <button type="button" className="contact-submit" onClick={handleContactClick} disabled={isSending} aria-busy={isSending}>
-                {isSending ? "Preparando contato..." : "Falar com especialista"}
+              <a href={CONTACT_WHATSAPP_URL} className="contact-submit" target="_blank" rel="noreferrer">
+                Falar pelo WhatsApp
                 <ArrowUpRight className="h-4 w-4" />
-              </button>
-              <small>Sem compromisso. Retorno inicial em ate 24h uteis.</small>
+              </a>
+              <small>Ou envie email para {CONTACT_EMAIL}.</small>
             </div>
           </div>
         </form>
@@ -1390,8 +1387,23 @@ function ContactInput({ placeholder, type = "text" }: { placeholder: string; typ
   return <input type={type} placeholder={placeholder} className="contact-input" />;
 }
 
-function ContactLine({ icon: Icon, value }: { icon: IconComponent; value: string }) {
-  return <span className="flex items-center gap-3"><Icon className="h-4 w-4 text-[#ff5b00]" />{value}</span>;
+function ContactLine({ icon: Icon, value, href }: { icon: IconComponent; value: string; href?: string }) {
+  const content = (
+    <>
+      <Icon className="h-4 w-4 text-[#ff5b00]" />
+      {value}
+    </>
+  );
+
+  if (href) {
+    return (
+      <a href={href} className="flex items-center gap-3 transition hover:text-white" target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined}>
+        {content}
+      </a>
+    );
+  }
+
+  return <span className="flex items-center gap-3">{content}</span>;
 }
 
 function Footer() {
