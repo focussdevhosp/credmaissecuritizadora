@@ -405,8 +405,8 @@ function Header({ pathname }: { pathname: string }) {
           <NavLink href="/sobre" active={pathname === "/sobre"} scrolled={scrolled}>Sobre</NavLink>
           <NavLink href="/contato" active={pathname === "/contato"} scrolled={scrolled}>Contato</NavLink>
         </div>
-        <a href="/contato" className={`hidden items-center gap-2 rounded-2xl px-5 py-3 text-xs font-black uppercase tracking-[0.16em] transition md:inline-flex ${scrolled ? "bg-[#16001f] text-white" : "bg-white text-[#16001f]"}`}>
-          Falar com especialista <ArrowUpRight className="h-4 w-4" />
+        <a href={CONTACT_WHATSAPP_URL} target="_blank" rel="noreferrer" className={`hidden items-center gap-2 rounded-2xl px-5 py-3 text-xs font-black uppercase tracking-[0.16em] transition md:inline-flex ${scrolled ? "bg-[#16001f] text-white" : "bg-white text-[#16001f]"}`}>
+          Diagnosticar caixa <ArrowUpRight className="h-4 w-4" />
         </a>
         <button className={`grid h-11 w-11 place-items-center rounded-full border md:hidden ${scrolled ? "border-black/10 bg-[#f6f7fb]" : "border-white/18 bg-white/12 text-white"}`} onClick={() => setOpen((value) => !value)}>
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -723,7 +723,7 @@ function HomePage() {
   useHomeMotion();
   return (
     <>
-      <CampaignHero image={HERO_IMAGE} eyebrow="Credmais Securitizadora" titleStart="Venda a prazo." titleBridge="Receba com" words={["liquidez.", "seguranca.", "previsibilidade."]} description="Capital para sua empresa crescer sem esperar o vencimento dos recebiveis." ctaText="Compare antecipacao, boleto garantido, consultoria, crediario e gestao de contas em uma mesma esteira financeira." buttonText="Comparar solucoes" buttonHref="/#solucoes" />
+      <CampaignHero image={HERO_IMAGE} eyebrow="Credmais Securitizadora" titleStart="Venda a prazo." titleBridge="Receba com" words={["liquidez.", "seguranca.", "previsibilidade."]} description="Capital para sua empresa crescer sem esperar o vencimento dos recebiveis." ctaText="Antecipe recebiveis, proteja boletos, organize contas e venda mais com credito estruturado sem depender de banco proprio." buttonText="Quero diagnostico financeiro" buttonHref={CONTACT_WHATSAPP_URL} />
       <HomeProofSection />
       <WebGLEngineSection />
       <PinnedJourneySection />
@@ -818,8 +818,8 @@ function WebGLEngineSection() {
           Uma leitura visual da operacao: carteira validada, risco acompanhado e liberacao organizada para a empresa vender sem perder previsibilidade.
         </p>
         <div className="engine-actions">
-          <a href="/contato">
-            Simular solucao financeira
+          <a href={CONTACT_WHATSAPP_URL} target="_blank" rel="noreferrer">
+            Diagnosticar minha operacao
             <ArrowUpRight className="h-4 w-4" />
           </a>
           <div className="engine-mini-proof">
@@ -942,11 +942,11 @@ function HomeTrustSection() {
           </article>
         ))}
       </div>
-      <a href="/contato" className="trust-cta">
-        Falar com especialista
+      <a href={CONTACT_WHATSAPP_URL} target="_blank" rel="noreferrer" className="trust-cta">
+        Avaliar minha operacao
         <ArrowUpRight className="h-4 w-4" />
       </a>
-      <p className="cta-microcopy">Sem compromisso. Primeira resposta em ate 24h uteis.</p>
+      <p className="cta-microcopy">Sem conta digital propria. A Credmais estrutura capital, risco e contas para sua empresa.</p>
     </section>
   );
 }
@@ -1040,7 +1040,7 @@ function SolutionPage({ solution }: { solution: Solution }) {
 
   return (
     <>
-      <CampaignHero image={visualSet.hero} eyebrow={solution.metric} titleStart={copy.titleStart} titleBridge={copy.titleBridge} words={copy.words} description={solution.summary} ctaText={`${solution.headline} Entenda a melhor estrutura para seu caixa com um especialista.`} buttonText="Falar com especialista" buttonHref="/contato" />
+      <CampaignHero image={visualSet.hero} eyebrow={solution.metric} titleStart={copy.titleStart} titleBridge={copy.titleBridge} words={copy.words} description={solution.summary} ctaText={`${solution.headline} A Credmais avalia documentos, risco, prazo e melhor estrutura para sua operacao, sem modelo de banco proprio.`} buttonText={`Avaliar ${solution.title}`} buttonHref={CONTACT_WHATSAPP_URL} />
       <SolutionProofStrip solution={solution} theme={theme} />
       <section className={`solution-detail-intro solution-detail-${visualSet.layout}`} style={{ "--accent": solution.accent } as CSSProperties}>
         <div className="solution-detail-shell">
@@ -1125,8 +1125,8 @@ function SolutionOperatingPanel({ solution, theme, visualSet }: { solution: Solu
         <span>Plano operacional</span>
         <h2>{theme.operatingTitle}</h2>
         <p>{theme.operatingText}</p>
-        <a href="/contato">
-          Falar sobre {solution.title}
+        <a href={CONTACT_WHATSAPP_URL} target="_blank" rel="noreferrer">
+          Quero estruturar {solution.title}
           <ArrowUpRight className="h-4 w-4" />
         </a>
       </div>
@@ -1159,12 +1159,12 @@ function SolutionExperience({ solution, theme, visualSet }: { solution: Solution
       <section className="solution-page-banner">
         <div className="solution-banner-copy solution-animated">
           <span>{solution.title}</span>
-          <h2>Uma pagina com ritmo, imagem e decisao.</h2>
+          <h2>Escolha a estrutura certa antes do caixa apertar.</h2>
           <p>
-            A Credmais apresenta cada solucao como uma jornada visual: primeiro o problema, depois a estrutura e por fim a liberacao do capital com acompanhamento.
+            Se a dor e falta de liquidez, inadimplencia, venda a prazo ou controle financeiro, a Credmais organiza a alternativa certa e acompanha a operacao.
           </p>
-          <a href="/contato">
-            Comparar servicos Credmais
+          <a href={CONTACT_WHATSAPP_URL} target="_blank" rel="noreferrer">
+            Receber orientacao Credmais
             <ArrowUpRight className="h-4 w-4" />
           </a>
         </div>
@@ -1235,8 +1235,8 @@ function SolutionFaqSection({ solution, theme }: { solution: Solution; theme: So
           </article>
         ))}
       </div>
-      <a href="/contato" className="solution-faq-cta">
-        Quero avaliar {solution.title}
+      <a href={CONTACT_WHATSAPP_URL} target="_blank" rel="noreferrer" className="solution-faq-cta">
+        Tirar duvidas no WhatsApp
         <ArrowUpRight className="h-4 w-4" />
       </a>
     </section>
@@ -1246,7 +1246,7 @@ function SolutionFaqSection({ solution, theme }: { solution: Solution; theme: So
 function AboutPage() {
   return (
     <>
-      <CampaignHero image={ABOUT_IMAGE} eyebrow="Sobre a Credmais" titleStart="Credito humano." titleBridge="Crescimento com" words={["confianca.", "clareza.", "parceria."]} description="Uma securitizadora feita para simplificar capital, proteger operacoes e acompanhar empresas em cada fase." ctaText="Atuamos com recebiveis, boleto garantido, consultoria, crediario e gestao de contas para empresas." buttonText="Conhecer servicos" buttonHref="/#solucoes" />
+      <CampaignHero image={ABOUT_IMAGE} eyebrow="Sobre a Credmais" titleStart="Credito humano." titleBridge="Crescimento com" words={["confianca.", "clareza.", "parceria."]} description="Uma securitizadora feita para simplificar capital, proteger operacoes e acompanhar empresas em cada fase." ctaText="Fomento, recebiveis, boletos, crediario, consultoria e gestao de contas para empresas que precisam de caixa claro." buttonText="Falar com a Credmais" buttonHref={CONTACT_WHATSAPP_URL} />
       <AboutIntroSection />
       <ContactSection compact />
     </>
@@ -1288,7 +1288,7 @@ function AboutIntroSection() {
 function ContactPage() {
   return (
     <>
-      <CampaignHero image={CONTACT_IMAGE} eyebrow="Contato Credmais" titleStart="Vamos conversar." titleBridge="Sua empresa com" words={["capital.", "apoio.", "direcao."]} description="Conte o que sua empresa precisa. A Credmais avalia a melhor estrutura para o seu fluxo." ctaText="Escolha entre antecipacao, boleto garantido, consultoria, crediario ou gestao de contas e fale com a Credmais." buttonText="Falar com especialista" buttonHref="#contato" />
+      <CampaignHero image={CONTACT_IMAGE} eyebrow="Contato Credmais" titleStart="Vamos conversar." titleBridge="Sua empresa com" words={["capital.", "apoio.", "direcao."]} description="Conte o que sua empresa precisa. A Credmais avalia a melhor estrutura para o seu fluxo." ctaText="Envie sua necessidade: caixa imediato, boleto protegido, credito para vender mais, consultoria ou organizacao de contas." buttonText="Chamar no WhatsApp" buttonHref={CONTACT_WHATSAPP_URL} />
       <ContactSection compact />
     </>
   );
@@ -1326,11 +1326,11 @@ function CampaignHero({ image, eyebrow, titleStart, titleBridge, words, descript
             ))}
           </div>
           <div className="hero-cta-action">
-            <a href={buttonHref} className="hero-cta-button">
+            <a href={buttonHref} className="hero-cta-button" target={buttonHref.startsWith("http") ? "_blank" : undefined} rel={buttonHref.startsWith("http") ? "noreferrer" : undefined}>
               {buttonText}
               <ArrowUpRight className="h-4 w-4" />
             </a>
-            <small>Sem compromisso. Resposta em ate 24h uteis.</small>
+            <small>Resposta pelo canal oficial da Credmais.</small>
           </div>
         </div>
       </div>
@@ -1343,9 +1343,9 @@ function ContactSection({ compact = false }: { compact?: boolean }) {
     <section id="contato" className={`bg-[#16001f] px-5 text-white md:px-[10%] ${compact ? "py-24" : "py-32"}`}>
       <div className="mx-auto max-w-6xl text-center">
         <p className="mb-6 text-xs font-black uppercase tracking-[0.36em] text-[#ffc6a3]">Contato</p>
-        <h2 className="text-5xl font-black leading-none tracking-[-0.06em] md:text-8xl">Qual solucao sua empresa precisa?</h2>
+        <h2 className="text-5xl font-black leading-none tracking-[-0.06em] md:text-8xl">O que sua empresa precisa resolver?</h2>
         <p className="mx-auto mt-6 max-w-3xl text-base font-bold leading-relaxed text-white/58 md:text-lg">
-          Escolha o servico e envie sua necessidade: antecipacao de recebiveis, boleto garantido, consultoria, crediario ou gestao de contas.
+          Fale com a Credmais sobre falta de caixa, venda a prazo, inadimplencia, dificuldade de credito, boleto garantido, crediario ou gestao de contas.
         </p>
         <div className="contact-service-grid" aria-label="Servicos para contato">
           {solutions.map((solution) => {
@@ -1362,7 +1362,7 @@ function ContactSection({ compact = false }: { compact?: boolean }) {
         <form className="mt-16 grid gap-10 text-left">
           <div className="grid gap-10 md:grid-cols-2"><ContactInput placeholder="Seu nome" /><ContactInput placeholder="Seu e-mail" type="email" /></div>
           <ContactInput placeholder="Sua empresa" />
-          <textarea className="contact-input min-h-36 resize-none" placeholder="Conte qual servico deseja: recebiveis, boleto garantido, consultoria, crediario ou gestao de contas." />
+          <textarea className="contact-input min-h-36 resize-none" placeholder="Conte sua necessidade: antecipar recebiveis, proteger boleto, organizar contas, vender no crediario ou estruturar capital." />
           <div className="grid gap-8 pt-4 md:grid-cols-[1fr_auto] md:items-center">
             <div className="grid gap-3 text-sm text-white/55 md:text-left">
               <ContactLine icon={Phone} value={`WhatsApp ${CONTACT_WHATSAPP_DISPLAY}`} href={CONTACT_WHATSAPP_URL} />
