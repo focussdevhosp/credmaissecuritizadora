@@ -58,6 +58,35 @@ img {
   max-width: 100%;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+button,
+span,
+strong,
+small,
+li {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p,
+li {
+  text-wrap: pretty;
+}
+
 ::selection {
   background: var(--color-primary);
   color: #ffffff;
@@ -125,18 +154,17 @@ img {
 
 .hero-animated-copy h1 {
   margin-top: 1.15rem;
-  max-width: min(100%, 11ch);
+  max-width: min(100%, 13ch);
   font-size: clamp(3rem, 5.15vw, 4rem);
   font-weight: 950;
   line-height: 0.92;
-  letter-spacing: -0.06em;
-  overflow-wrap: anywhere;
+  letter-spacing: -0.052em;
 }
 
 .hero-animated-copy p {
   margin-top: 1.25rem;
   max-width: 31rem;
-  color: rgb(255 255 255 / 0.78);
+  color: rgb(255 255 255 / 0.9);
   font-size: clamp(1rem, 1.45vw, 1.18rem);
   font-weight: 750;
   line-height: 1.55;
@@ -145,7 +173,7 @@ img {
 .hero-word-rotator {
   position: relative;
   display: block;
-  width: min(100%, 10.8ch);
+  width: min(100%, 14ch);
   min-height: 1em;
   color: #ff5b00;
 }
@@ -206,7 +234,7 @@ img {
   display: block;
   margin-bottom: 0.28rem;
   color: #ffb37e;
-  font-size: 0.66rem;
+  font-size: 0.72rem;
   font-weight: 950;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -235,8 +263,8 @@ img {
     radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 52%),
     rgb(255 255 255 / 0.08);
   padding: 0.52rem 0.72rem;
-  color: rgb(255 255 255 / 0.84);
-  font-size: 0.66rem;
+  color: rgb(255 255 255 / 0.92);
+  font-size: 0.7rem;
   font-weight: 950;
   letter-spacing: 0.08em;
   line-height: 1;
@@ -287,8 +315,8 @@ img {
 
 .hero-cta-action small {
   max-width: 18rem;
-  color: rgb(255 255 255 / 0.64);
-  font-size: 0.68rem;
+  color: rgb(255 255 255 / 0.78);
+  font-size: 0.72rem;
   font-weight: 850;
   line-height: 1.35;
   text-align: center;
@@ -1360,7 +1388,7 @@ img {
   background: rgb(0 0 0 / 0.34);
   padding: 0.58rem 0.82rem;
   color: #ffffff;
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   font-weight: 950;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -1398,7 +1426,7 @@ img {
 
 .solution-card-kicker {
   color: color-mix(in srgb, var(--accent) 78%, #080510 22%);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   font-weight: 950;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -3724,8 +3752,8 @@ img {
 
   .hero-animated-copy > span {
     max-width: 100%;
-    font-size: 0.62rem;
-    letter-spacing: 0.18em;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
   }
 
   .hero-animated-copy h1 {
@@ -3987,6 +4015,187 @@ img {
   .solutions-scroll-copy {
     top: 6rem;
     padding-block: 1rem;
+  }
+}
+
+/* Readability pass: higher contrast, no mid-word breaks, and safer compact UI text. */
+.campaign-hero,
+.solution-operating-panel,
+.solution-experience,
+.home-faq-section,
+.motion-rail-section,
+.webgl-engine,
+.home-pin-section,
+.contact-section {
+  text-shadow: 0 12px 34px rgb(0 0 0 / 0.22);
+}
+
+.hero-animated-copy,
+.hero-cta-panel {
+  text-shadow: 0 12px 36px rgb(0 0 0 / 0.36);
+}
+
+.home-pin-card p,
+.motion-rail-card p,
+.home-faq-item p,
+.solution-operating-copy p,
+.solution-operating-card p,
+.solution-banner-copy p,
+.solution-flow-sticky p,
+.solution-flow-step p,
+.solution-visual-card p,
+.contact-submit-wrap small,
+.contact-service-grid small,
+.engine-flow-node,
+.engine-dashboard span,
+.engine-dashboard small,
+.engine-human-caption span,
+.solution-floating-card small {
+  color: rgb(255 255 255 / 0.78);
+}
+
+.engine-dashboard span,
+.contact-service-grid small,
+.contact-submit-wrap small {
+  font-size: 0.74rem;
+}
+
+.contact-input::placeholder {
+  color: rgb(255 255 255 / 0.72);
+}
+
+.home-proof-copy p,
+.home-proof-card p,
+.solution-detail-copy span,
+.solution-theme-case p,
+.solution-card-body p,
+.solution-flow-sticky p,
+.solution-faq-item p,
+.home-trust-heading p,
+.testimonial-card span,
+.about-intro-copy p,
+.about-principles p {
+  color: #4c4357;
+}
+
+.solution-bullet-card span,
+.solution-theme-case h3,
+.solution-operating-card h3,
+.solution-flow-step h3,
+.solution-visual-card h3,
+.home-faq-item h3,
+.testimonial-card p,
+.about-principles h3,
+.contact-service-grid strong {
+  line-height: 1.12;
+}
+
+.solution-theme-copy h2,
+.solution-operating-copy h2,
+.solution-banner-copy h2,
+.solution-flow-sticky h2,
+.solution-faq-heading h2,
+.home-trust-heading h2,
+.home-faq-heading h2,
+.about-intro-copy h2,
+.motion-rail-heading h2,
+.home-pin-copy h2,
+.webgl-engine-copy h2,
+.home-proof-copy h2 {
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.hero-cta-button,
+.trust-cta,
+.contact-submit,
+.solution-card-link,
+.solution-banner-copy a,
+.solution-operating-copy a,
+.solution-faq-cta {
+  min-height: 52px;
+  line-height: 1.22;
+  white-space: normal;
+}
+
+.hero-service-links a,
+.trust-profile-row span,
+.solution-bullet-card small,
+.solution-theme-copy > span,
+.solution-faq-heading span,
+.solution-banner-copy > span,
+.solution-flow-sticky > span,
+.solution-visual-card span,
+.home-trust-heading span,
+.home-faq-heading span,
+.about-intro-copy span,
+.contact-service-grid small {
+  line-height: 1.28;
+}
+
+@media (max-width: 767px) {
+  .hero-animated-copy {
+    max-width: min(88vw, 25rem);
+  }
+
+  .hero-animated-copy h1 {
+    max-width: min(100%, 12.5ch);
+    line-height: 0.98;
+  }
+
+  .solution-theme-copy h2,
+  .solution-operating-copy h2,
+  .solution-banner-copy h2,
+  .solution-flow-sticky h2,
+  .solution-faq-heading h2,
+  .home-trust-heading h2,
+  .home-faq-heading h2,
+  .about-intro-copy h2,
+  .motion-rail-heading h2,
+  .home-pin-copy h2,
+  .webgl-engine-copy h2,
+  .home-proof-copy h2 {
+    font-size: clamp(2.35rem, 10.5vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .hero-service-links a,
+  .trust-profile-row span {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+  }
+
+  .solution-layout-retail .solution-visual-grid,
+  .solution-layout-control .solution-visual-grid,
+  .solution-layout-advisory .solution-visual-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .solution-layout-retail .solution-visual-card:nth-child(2) {
+    min-height: auto;
+  }
+
+  .solution-layout-protection .solution-page-banner,
+  .solution-layout-retail .solution-page-banner,
+  .solution-layout-advisory .solution-page-banner,
+  .solution-layout-control .solution-page-banner,
+  .solution-layout-protection .solution-flow-section,
+  .solution-layout-retail .solution-flow-section,
+  .solution-layout-advisory .solution-flow-section,
+  .solution-layout-control .solution-flow-section {
+    grid-template-columns: 1fr;
+  }
+
+  .solution-layout-protection .solution-banner-media,
+  .solution-layout-retail .solution-banner-media,
+  .solution-layout-protection .solution-flow-sticky,
+  .solution-layout-control .solution-flow-sticky {
+    order: initial;
+  }
+
+  .solution-floating-card {
+    max-width: calc(100% - 2rem);
   }
 }
 
